@@ -1,4 +1,4 @@
- gpu 太贵了， 所以我想提高transformers 架构的执行效率； 从快速傅里叶变换获得 了灵感，从而基于transformer架构开始编写  快速 transformer 架构。  
+ gpu 太贵了， 所以我想提高transformers 架构的执行效率； 从快速傅里叶变换，拉普拉斯变换，获得 了灵感，从而基于transformer架构开始编写  快速 transformer 架构。  
  
  我实在买不起gpu, 因此更想用便宜的cpu， 想让cpu也能快速实现gpu的效果。
 
