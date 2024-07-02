@@ -20,6 +20,12 @@ def fft_attention(query, key, value):
 # head_dim (d): The feature dimension size of each attention head.
 # Therefore, bhid typically represents a tensor with a shape of (batch_size, num_heads, seq_length, head_dim).
 
+# batch_size（b）：输入数据批次的大小。
+# num_heads（h）：多头注意力机制中的头数。
+# seq_length（i）：输入序列的长度。
+# head_dim（d）：每个注意力头的特征维度大小。
+# 因此，bhid 通常表示一个形状为 (batch_size, num_heads, seq_length, head_dim) 的张量。
+
     attention_scores = torch.einsum("bhid,bhjd->bhij", query_fft, key_fft.transpose(-2, -1).conj())
     attention_probs = torch.fft.ifft(attention_scores, dim=-1).real
     

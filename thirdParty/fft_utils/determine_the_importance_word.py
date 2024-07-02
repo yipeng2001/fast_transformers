@@ -1,25 +1,24 @@
 import numpy as np
-
+import json
 # 生成代表性词汇和词向量（参考之前的生成方法）
-eeg_words = [
-    "alpha", "beta", "gamma", "delta", "theta", "mu", "kappa", "lambda",
-    "brainwave", "neurofeedback", "EEG", "electrode", "signal", "frequency",
-    "amplitude", "oscillation", "cortex", "neuron", "synapse", "spike",
-    "artifact", "noise", "band", "spectral", "coherence", "power", "density",
-    "activity", "baseline", "epoch", "event", "related", "potential", "ERP",
-    "synchronization", "desynchronization", "theta-alpha", "beta-gamma",
-    "connectivity", "network", "mapping", "topography", "analysis", "feature",
-    "extraction", "classification", "detection", "monitoring", "signal", "processing",
-    "filtering", "transform", "Fourier", "wavelet", "decomposition", "component",
-    "ICA", "PCA", "time", "domain", "frequency", "domain", "spatial", "domain",
-    "complexity", "entropy", "fractal", "dimensionality", "phase", "locking",
-    "coupling", "correlation", "spectrum", "coherence", "cross-frequency",
-    "modulation", "binaural", "beats", "neuroplasticity", "cognitive", "state",
-    "attention", "meditation", "sleep", "wakefulness", "arousal", "relaxation",
-    "stress", "anxiety", "depression", "therapy", "biofeedback", "neurotherapy",
-    "brain-computer", "interface", "BCI", "neurotechnology", "mindfulness", "consciousness"
-]
-eeg_words = eeg_words[:100]
+def load_eeg_words(json_path):
+        """
+    从指定的JSON文件中加载词数组。
+
+    参数:
+    json_path (str): JSON文件的路径
+
+    返回:
+    list: 词数组
+    """
+    with open(json_path, 'r') as file:
+        data = json.load(file)
+        return data['eeg_words']
+    
+json_path = '../eeg_words.json'  # 确保路径正确
+eeg_words = load_eeg_words(json_path)
+print("Loaded words:", eeg_words)    
+ 
 
 embedding_dim = 128
 word_vectors = np.random.randn(100, embedding_dim)
