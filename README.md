@@ -109,5 +109,6 @@ python examples/run_transformer.py  # 假设有一个示例脚本
 - **查看 README.md 和文档**：在仓库根目录中通常会有 README.md 文件，其中可能包含项目的具体安装和运行指南。
 - **检查 `setup.py` 文件**：该文件中通常包含包的依赖项，可以根据其中的信息手动安装。
 
-如果在执行过程中遇到任何问题，请提供详细的错误信息，以便进一步协助解决。
+python transformers/examples/pytorch/text-generation/run_generation.py --device cpu --your-arguments
+
 
